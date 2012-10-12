@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Firing a callback after N time all across your website - Page 1</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-sitewide-event.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    // fire fireMe() with all default options
+	$.sitewideEvent( fireMe	);
+
+    // fire an inline callback with custom options
+    $.sitewideEvent(
+        {
+            cookieName: 'my_custom_cookie_name',
+            fireAt: 10000, // 10s
+            cookieExpires: new Date(new Date().setTime(new Date().getTime() + 24 * 60 * 60 * 1000)) // 24hs
+        },
+        function () {
+            console.log("Hey! I'm the \"custom options\" example being fired every 10 seconds :)");
+        }
+    );
+});
+function fireMe () {
+    console.log("Hi! I'm fireMe() being fired :)");
+}
+</script>
+
+</head>
+<body>
+<h1>Firing a callback after N time all across your website. Page 1!</h1>
+<h2>The timer is running every second. One message should appear in the console every 6 seconds and another every 10 seconds, no matter you go to the other web page in this micro-website. Enjoy!</h2>
+<p><a href="another-website-page.html"> [Click to go to another page in the website.]</a></p>
+<p>You can see the current example code below:</p>
+<pre>
+$<span style="color:blue; font-size:1.2em;"><b>(</b></span>document<span style="color:blue; font-size:1.2em;"><b>)</b></span><span style="color:blue; font-size:1.2em;"><b>.</b></span>ready<span style="color:blue; font-size:1.2em;"><b>(</b></span><span style="color:red"><b>function</b></span><span style="color:blue; font-size:1.2em;"><b>(</b></span><span style="color:blue; font-size:1.2em;"><b>)</b></span> <span style="color:blue; font-size:1.2em;"><b>{</b></span>
+    <span style="color:green"><i>// fire fireMe() with all default options
+</i></span>    $<span style="color:blue; font-size:1.2em;"><b>.</b></span>sitewideEvent<span style="color:blue; font-size:1.2em;"><b>(</b></span> fireMe   <span style="color:blue; font-size:1.2em;"><b>)</b></span><span style="color:blue; font-size:1.2em;"><b>;</b></span>
+
+    <span style="color:green"><i>// fire an inline callback with custom options
+</i></span>    $<span style="color:blue; font-size:1.2em;"><b>.</b></span>sitewideEvent<span style="color:blue; font-size:1.2em;"><b>(</b></span>
+        <span style="color:blue; font-size:1.2em;"><b>{</b></span>
+            cookieName<span style="color:blue; font-size:1.2em;">:</span> <span style="color:purple">'my_custom_cookie_name'</span><span style="color:blue; font-size:1.2em;"><b>,</b></span>
+            fireAt<span style="color:blue; font-size:1.2em;">:</span> <span style="color:brown">10000</span><span style="color:blue; font-size:1.2em;"><b>,</b></span> <span style="color:green"><i>// 10s
+</i></span>            cookieExpires<span style="color:blue; font-size:1.2em;">:</span> <span style="color:blue; font-size:1.2em;">new</span> Date<span style="color:blue; font-size:1.2em;"><b>(</b></span><span style="color:blue; font-size:1.2em;">new</span> Date<span style="color:blue; font-size:1.2em;"><b>(</b></span><span style="color:blue; font-size:1.2em;"><b>)</b></span><span style="color:blue; font-size:1.2em;"><b>.</b></span>setTime<span style="color:blue; font-size:1.2em;"><b>(</b></span><span style="color:blue; font-size:1.2em;">new</span> Date<span style="color:blue; font-size:1.2em;"><b>(</b></span><span style="color:blue; font-size:1.2em;"><b>)</b></span><span style="color:blue; font-size:1.2em;"><b>.</b></span>getTime<span style="color:blue; font-size:1.2em;"><b>(</b></span><span style="color:blue; font-size:1.2em;"><b>)</b></span> <span style="color:blue; font-size:1.2em;">+</span> <span style="color:brown">24</span> <span style="color:blue; font-size:1.2em;">*</span> <span style="color:brown">60</span> <span style="color:blue; font-size:1.2em;">*</span> <span style="color:brown">60</span> <span style="color:blue; font-size:1.2em;">*</span> <span style="color:brown">1000</span><span style="color:blue; font-size:1.2em;"><b>)</b></span><span style="color:blue; font-size:1.2em;"><b>)</b></span> <span style="color:green"><i>// 24hs
+</i></span>        <span style="color:blue; font-size:1.2em;"><b>}</b></span><span style="color:blue; font-size:1.2em;"><b>,</b></span>
+        <span style="color:red"><b>function</b></span> <span style="color:blue; font-size:1.2em;"><b>(</b></span><span style="color:blue; font-size:1.2em;"><b>)</b></span> <span style="color:blue; font-size:1.2em;"><b>{</b></span>
+            console<span style="color:blue; font-size:1.2em;"><b>.</b></span>log<span style="color:blue; font-size:1.2em;"><b>(</b></span><span style="color:purple">"Hey! I'm the \"</span>custom options\<span style="color:purple">" example being fired every 10 seconds :)"</span><span style="color:blue; font-size:1.2em;"><b>)</b></span><span style="color:blue; font-size:1.2em;"><b>;</b></span>
+        <span style="color:blue; font-size:1.2em;"><b>}</b></span>
+    <span style="color:blue; font-size:1.2em;"><b>)</b></span><span style="color:blue; font-size:1.2em;"><b>;</b></span>
+<span style="color:blue; font-size:1.2em;"><b>}</b></span><span style="color:blue; font-size:1.2em;"><b>)</b></span><span style="color:blue; font-size:1.2em;"><b>;</b></span>
+<span style="color:red"><b>function</b></span> fireMe <span style="color:blue; font-size:1.2em;"><b>(</b></span><span style="color:blue; font-size:1.2em;"><b>)</b></span> <span style="color:blue; font-size:1.2em;"><b>{</b></span>
+    console<span style="color:blue; font-size:1.2em;"><b>.</b></span>log<span style="color:blue; font-size:1.2em;"><b>(</b></span><span style="color:purple">"Hi! I'm fireMe() being fired :)"</span><span style="color:blue; font-size:1.2em;"><b>)</b></span><span style="color:blue; font-size:1.2em;"><b>;</b></span>
+<span style="color:blue; font-size:1.2em;"><b>}</b></span></pre>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Firing a callback after N time all across your website - Page 2</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-sitewide-event.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    // fire fireMe() with all default options
+	$.sitewideEvent( fireMe	);
+
+    // fire an inline callback with custom options
+    $.sitewideEvent(
+        {
+            cookieName: 'my_custom_cookie_name',
+            fireAt: 10000, // 10s
+            cookieExpires: new Date(new Date().setTime(new Date().getTime() + 24 * 60 * 60 * 1000)) // 24hs
+        },
+        function () {
+            console.log("Hey! I'm the \"custom options\" example being fired every 10 seconds :)");
+        }
+    );
+});
+function fireMe () {
+    console.log("Hi! I'm fireMe() being fired :)");
+}
+</script>
+
+</head>
+<body>
+<h1>Firing a callback after N time all across your website. Page 2!</h1>
+<h2>The timer is still running every second. One message should still appear in the console every 6 seconds and another every 10 seconds, no matter you go to the other web page in this micro-website. Enjoy!</h2>
+<p><a href="index.html"> [Click to go back to the other page in the website.]</a></p>
+
+</body>
+</html>
