@@ -5,7 +5,7 @@ jQuery Sitewide Event Firer is a quick and dirty plugin which allows to set up a
 ## Dependencies
 
 - jQuery (Currently tested with v1.8.2)
-- [carhartl's jQuery Cookies Plugin](https://github.com/carhartl/jquery-cookie) (Currently tested with v1.2. You can forget adding it in your source and the plugin will add it for you from GitHub.)
+- [carhartl's jQuery Cookies Plugin](https://github.com/carhartl/jquery-cookie) (Currently tested with v1.2. You can forget adding it in your source and the plugin will add it for you from GitHub -**BUT**... it won't work on IE9 due mime type mismatch [SEC7112] error-.)
 
 ## Demo and Documentation
 
